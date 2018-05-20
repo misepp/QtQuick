@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MainForm.ui.qml</file>
+        <file>Button.qml</file>
+        <file>MyView.qml</file>
+        <file>CloseButton.qml</file>
+        <file>GameRect.qml</file>
+        <file>Input.qml</file>
+    </qresource>
+</RCC>
