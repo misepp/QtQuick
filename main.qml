@@ -93,7 +93,6 @@ Window {
             }
             Button {
                 id: button2
-
                 width: rootForm.width-60
                 visible: opacity != 0
                 opacity: rootForm.effectiveOpacity
