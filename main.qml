@@ -91,6 +91,7 @@ Window {
                     console.log("POINTS when starting the game: " + dataStorage.Points);
                 }
             }
+
             Button {
                 id: button2
                 width: rootForm.width-60
