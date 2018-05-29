@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     //SINGLETON ->
     ContextProp::getContextProp()->CreateDB();
-    engine.rootContext()->setContextProperty("testProp", ContextProp::getContextProp());
+    engine.rootContext()->setContextProperty("dataStorage", ContextProp::getContextProp());
     //<- SINGLETON */
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
@@ -36,12 +36,12 @@ int main(int argc, char *argv[])
     /* NORMAL ->
     ContextProp *prop = new ContextProp(&engine);
     //ContextProp *prop = ContextProp::getContextProp();
-    engine.rootContext()->setContextProperty("testProp", prop);
+    engine.rootContext()->setContextProperty("dataStorage", prop);
     // <- NORMAL */
 
     /* Q_GLOBAL_STATIC ->
     Interface::getC().CreateDB();
-    engine.rootContext()->setContextProperty("testProp", &Interface::getC());
+    engine.rootContext()->setContextProperty("dataStorage", &Interface::getC());
     <- Q_GLOBAL_STATIC */
 
     QQuickWindow *window = qobject_cast<QQuickWindow*>(engine.rootObjects().at(0));

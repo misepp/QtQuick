@@ -58,7 +58,7 @@ void ContextProp::CreateDB()
     Lib->CreateDBCon();
 }
 
-QString ContextProp::testFunction(QString var)
+QString ContextProp::saveData(QString var, int points)
 {
     //int num = var.toInt();
     //num += 10;
@@ -66,7 +66,7 @@ QString ContextProp::testFunction(QString var)
 //#ifdef QT_DEBUG
         //return var+=10;
 //#endif
-    if(ContextProp::Lib->InsertData(var, 450))
+    if(ContextProp::Lib->InsertData(var, points))
     {
         return QString(var + " SUCCESS");
     }

@@ -11,7 +11,7 @@ Window {
         color: "lightblue"
         property real effectiveOpacity: 1.0
         property string person: ""
-        property int points: testProp.Points
+        property int points: dataStorage.Points
         id: rootForm
 
 
@@ -19,8 +19,8 @@ Window {
             person = name
             console.log("NIMI TALLESSA: " + person)
         }
-        function callContextProp(name) {
-            console.log("callContextProp: " + testProp.testFunction(name))
+        function storeData(name, points) {
+            console.log("storeData: " + dataStorage.saveData(name, points))
         }
 
         Text {
@@ -83,8 +83,8 @@ Window {
                                                         "width": rootForm.width,
                                                         "height": rootForm.height
                                                         });
-                    console.log("CONTEXT property says: " + testProp.testFunction(rootForm.person));
-                    console.log("Saved name is: " + rootForm.person)
+                    //console.log("CONTEXT property says: " + dataStorage.saveData(rootForm.person));
+                    //console.log("Saved name is: " + rootForm.person)
                     object.state = "showView";
                     console.log("X after SHOW: " + object.x)
                 }
@@ -154,9 +154,9 @@ Window {
                                                         "width": rootForm.width,
                                                         "height": rootForm.height/5*/
                                                         });
-                testProp.setPoints(5);
-				//testProp.setPoints(testProp.getPoints() + 5);
-                console.log("CONTEXT POINTS: " + rootForm.points)
+                //dataStorage.setPoints(5);
+                //dataStorage.setPoints(dataStorage.getPoints() + 5);
+                console.log("CONTEXT POINTS: " + rootForm.points);
                 }
             }
         }

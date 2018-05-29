@@ -81,7 +81,7 @@ public:
 
 
 public:
-Q_INVOKABLE QString testFunction(QString var);
+Q_INVOKABLE QString saveData(QString var, int points);
 
 private:
     ActionLib *Lib;
