@@ -87,6 +87,8 @@ Window {
                     //console.log("Saved name is: " + rootForm.person)
                     object.state = "showView";
                     console.log("X after SHOW: " + object.x)
+                    //dataStorage.setPoints(dataStorage.getPoints() + 5);
+                    console.log("POINTS when starting the game: " + dataStorage.Points);
                 }
             }
             Button {

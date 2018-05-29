@@ -16,12 +16,12 @@ public:
 
 public:
 
-    Q_INVOKABLE int Points() const
+    int Points() const
     {
         return points;
     }
 
-    Q_INVOKABLE void setPoints(const int newValue)
+    void setPoints(const int newValue)
     {
         if (newValue != points)
         points = newValue;
