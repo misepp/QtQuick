@@ -16,12 +16,12 @@ public:
 
 public:
 
-    Q_INVOKABLE int Points() const
+    int Points() const
     {
         return points;
     }
 
-    Q_INVOKABLE void setPoints(const int newValue)
+    void setPoints(const int newValue)
     {
         if (newValue != points)
         points = newValue;
@@ -81,7 +81,7 @@ public:
 
 
 public:
-Q_INVOKABLE QString testFunction(QString var);
+Q_INVOKABLE QString saveData(QString var, int points);
 
 private:
     ActionLib *Lib;

@@ -28,8 +28,15 @@ Rectangle {
                 anchors.leftMargin: 5
                 anchors.rightMargin: 5
                 wrapMode: TextInput.Wrap
-
                 font.pixelSize:  12
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        parent.text = "";
+                        parent.forceActiveFocus();
+                    }
+                }
             }
         }
 
@@ -42,7 +49,7 @@ Rectangle {
 
             onButtonClicked: {
                 if(personData.text != "") {
-                    parentRect.parent.person = personData.text
+                    parentRect.parent.storeData(personData.text)
                     personData.text = ""
                 }
             }
