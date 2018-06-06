@@ -1,4 +1,7 @@
 #include <QDebug>
+#include <QVariant>
+#include <QList>
+#include <QDebug>
 
 #include "contextprop.h"
 #include "actionlib.h"
@@ -55,7 +58,8 @@ ContextProp::ContextProp(QObject *parent) : QObject(parent)
 void ContextProp::CreateDB()
 {
     Lib = new ActionLib(this);
-    Lib->CreateDBCon();
+    bool retVal = Lib->CreateDBCon();
+    qDebug() << "DB luonti status: " << retVal;
 }
 
 QString ContextProp::saveData(QString var, int points)
@@ -73,6 +77,16 @@ QString ContextProp::saveData(QString var, int points)
     else return QString(var + " FAIL!");
 }
 
+QVariant ContextProp::readData(QString name)
+{
+//    QList<QVariant> temp;
+//    temp = Lib->readData(name);
+
+    //QList<QVariant> testi();
+    QVariant temp = ContextProp::Lib->readData(name);
+    return temp;
+      //return NULL;
+}
 
 ContextProp::~ContextProp()
 {

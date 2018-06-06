@@ -49,8 +49,9 @@ Rectangle {
 
             onButtonClicked: {
                 if(personData.text != "") {
-                    parentRect.parent.storeData(personData.text)
-                    personData.text = ""
+                    parentRect.parent.storeData(personData.text, Math.floor((Math.random() * 100) + 1));
+                    parentRect.parent.preservePersonData(personData.text);
+                    personData.text = "";
                 }
             }
         }

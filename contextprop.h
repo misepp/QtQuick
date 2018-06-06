@@ -1,6 +1,7 @@
 #ifndef CONTEXTPROP_H
 #define CONTEXTPROP_H
 #include <QObject>
+#include <QVariant>
 
 //#define BOOST_FOREACH(list, index) for(index = 0; index < list.size(); index++)
 
@@ -82,6 +83,8 @@ public:
 
 public:
 Q_INVOKABLE QString saveData(QString var, int points);
+
+Q_INVOKABLE QVariant readData(QString name);
 
 private:
     ActionLib *Lib;

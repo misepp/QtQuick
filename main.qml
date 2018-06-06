@@ -7,12 +7,13 @@ Window {
     width: 600
 
    MainForm {
+       id: rootForm
         anchors.fill: parent
         color: "lightblue"
         property real effectiveOpacity: 1.0
         property string person: ""
         property int points: dataStorage.Points
-        id: rootForm
+
 
 
         function preservePersonData(name) {
@@ -85,10 +86,20 @@ Window {
                                                         });
                     //console.log("CONTEXT property says: " + dataStorage.saveData(rootForm.person));
                     //console.log("Saved name is: " + rootForm.person)
+
                     object.state = "showView";
                     console.log("X after SHOW: " + object.x)
                     //dataStorage.setPoints(dataStorage.getPoints() + 5);
                     console.log("POINTS when starting the game: " + dataStorage.Points);
+
+                    var lista = dataStorage.readData(rootForm.person);
+                    for(var i=0 ; i<lista.length ; i++) {
+                        console.log("LISTA: " + lista[i]);
+                    }
+
+                    console.log("DATA: " + dataStorage.readData(rootForm.person));
+
+
                 }
             }
             Button {
