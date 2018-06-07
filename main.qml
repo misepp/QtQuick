@@ -102,6 +102,7 @@ Window {
 
                 }
             }
+
             Button {
                 id: button2
                 width: rootForm.width-60
