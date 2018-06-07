@@ -5,9 +5,19 @@
 #include <QQmlContext>
 #include <QGuiApplication>
 
+#include <QDebug>
+
 #include "contextprop.h"
 #include "actionlib.h"
+//void manipulate(int* pointer);
 
+void manipulate(int *pointer) {
+    *pointer = 67;
+}
+
+void manipulate2(int &ref) {
+    ref = 300;
+}
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +27,16 @@ int main(int argc, char *argv[])
     QQuickView* item = new  QQuickView();
     item->setParent(&window);
     */
+    int num = 5;
+    int *pointer = &num;
+    qDebug() << pointer << " " << *pointer;
+    manipulate(pointer);
+    qDebug() << num;
+
+    int &ref = num;
+    manipulate2(*pointer);
+    qDebug() << num;
+
 
 /*
     QQmlEngine engine;
